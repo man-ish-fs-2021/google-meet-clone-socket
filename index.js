@@ -9,7 +9,9 @@ const { Server } = require("socket.io");
 //   res.sendFile(__dirname + "/index.html");
 // });
 const isDev = app.settings.env === "development";
-const url = isDev ? "http://localhost:3000/" : "";
+const url = isDev
+  ? "http://localhost:3000/"
+  : "https://google-meet-clone-lac.vercel.app/";
 const io = new Server(server, { cors: url });
 console.log({ url });
 app.use(cors({ origin: url }));
